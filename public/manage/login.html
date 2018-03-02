@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>登陆页面</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <!-- 引入 bootstrap-validator 的样式, 由于基于 bootstrap 所以放在下面引入 -->
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
+  <!-- 进度条 css -->
+  <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+  
+  <!-- 我们自己的 common.css -->
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<!-- 加大背景 -->
+<body class="body_bg">
+
+<!-- container 版心容器, 可以在不同屏幕下响应式版心 -->
+<div class="container">
+  <!-- 后台管理系统, 主要在于实现功能 -->
+  <div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-primary mt_150">
+      <div class="panel-heading">
+        <h4>后台管理系统</h4>
+      </div>
+      <div class="panel-body">
+        <!-- action="/employee/employeeLogin" method="post" -->
+        <form class="form-horizontal" id="loginForm">
+          <div class="form-group">
+            <label for="inputUsername" class="col-sm-3 control-label">用户名:</label>
+            <div class="col-sm-9">
+              <input type="text" name="username" class="form-control" id="inputUsername" placeholder="请输入用户名">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="col-sm-3 control-label">密码:</label>
+            <div class="col-sm-9">
+              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="请输入密码">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+              <button type="reset" class="btn btn-default pull-left">重置</button>
+              <button type="submit" class="btn btn-primary pull-right">登陆</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

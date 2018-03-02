@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+/*-------------------S 基本样式初始化 开始 ----------------------*/
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+* {
+  touch-action: none;
+}
+
+// 重置 mui 基本样式
+.mui-input-group .mui-input-row:after {
+  left: 0px;
+}
+.mui-table-view-cell:after {
+  left: 0px;
+}
+
+
+// 默认 chrome 浏览器, (其他浏览器不会有这个问题)
+// 在记住密码时, 他的背景页面会突然改成屎黄色, 用户体验不好, 需要重置
+// 但是重置样式时, 发现重置不了, 解决通过添加 box-shadow 内阴影盖在背景层上面
+// 实现背景效果
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+
+
+/*-------------------E 基本样式初始化 结束 ----------------------*/
+
+
+
+
+/*-------------------S 整体公共部分布局 开始 ----------------------*/
+
+// 整体
+.lt_container {
+  width: 100%;
+  height: 100%;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+
+// 乐淘头部
+.lt_header {
+  width: 100%;
+  height: 45px;
+  background-color: #006699;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  overflow: hidden;
+
+  // 标题文本
+  .header_title {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-weight: normal;
+    line-height: 45px;
+    // mui 侵入性, 会默认给 h系列标签 加 margin
+    margin: 0;
+  }
+
+  .icon_left, .icon_right {
+    position: absolute;
+    top: 0;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    line-height: 45px;
+  }
+
+  .icon_left {
+    left: 0;
+  }
+
+  .icon_right {
+    right: 0;
+  }
+
+}
+
+
+// 乐淘底部
+.lt_footer {
+  width: 100%;
+  height: 55px;
+  background-color: #006699;
+  position: absolute;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    flex: 1;
+    a {
+      padding-top: 10px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      color: white;
+    }
+
+    p {
+      color: white;
+      margin: 0;
+    }
+  }
+
+
+  // 当前页时, 需要高亮
+  li.now {
+    a {
+      color: orange;
+    }
+    p {
+      color: orange;
+    }
+  }
+}
+
+// 乐淘中间主体
+.lt_main {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  // 加定位, 可以保证所有的子盒子都是相对于 main 来进行定位的
+  // 不会直接跑出去
+  position: relative;
+  // 保证中间主体部分的高度不变
+  overflow: hidden;
+}
+
+
+
+
+/*-------------------E 整体公共部分布局 结束 ----------------------*/
+
+
+
+/*-------------------S 公用css组件 开始 ----------------------*/
+
+// 乐淘搜索框
+.lt_search {
+  padding: 10px;
+  position: relative;
+
+
+  // 搜索框
+  .search_inp {
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    border: 1px solid #069;
+    border-radius: 5px;
+    margin-bottom: 0px;
+  }
+
+  // 搜索按钮
+  .search_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 0 5px 5px 0;
+    background-color: #069;
+  }
+
+}
+
+// 商品模块部分
+.lt_product {
+  display: flex;
+  flex-wrap: wrap;
+
+  .item_box {
+    width: 50%;
+    padding: 10px;
+  }
+
+  .item {
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-shadow: 0 0 5px #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .price {
+      color: red;
+    }
+
+    .oldPrice {
+      text-decoration: line-through;
+    }
+
+    .productInfo  {
+      height: 42px;
+    }
+
+  }
+}
+
+
+/*-------------------E 公用css组件 结束 ----------------------*/

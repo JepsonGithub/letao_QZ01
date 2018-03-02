@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+// 希望所有的表格都能水平垂直居中
+.table.table-bordered td,
+.table.table-bordered th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.body_bg {
+  background-color: #212C32;
+}
+
+/* ------------------------- S 公用样式开始 ------------------------- */
+.panel h4 {
+  text-align: center
+}
+
+.mt_150 {
+  margin-top: 150px;
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+
+/* ------------------------- E 公用样式结束 ------------------------- */
+
+
+
+
+// 模态框样式
+#logoutModal .modal-body{
+  color: #A94442;
+}
+
+/* 报表 */
+.pic_left,
+.pic_right {
+  height: 400px;
+}
+
+
+
+
+/*-------------------S 侧边栏 开始 ----------------------*/
+
+.lt_aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 180px;
+  height: 100%;
+  background-color: #222D32;
+  transition: all 1s;
+  z-index: 999;
+
+  // 侧边栏 切换
+  &.now {
+    left: -180px;
+  }
+
+  // 大标题
+  .brand {
+    width: 180px;
+    height: 50px;
+    background-color: #367EA8;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 50px;
+      font-size: 24px;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  // 用户头像
+  .user {
+    width: 180px;
+    height: 150px;
+    padding: 20px;
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .user_info {
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+
+  // 导航
+  .nav {
+
+    a {
+      display: block;
+      height: 40px;
+      line-height: 34px;
+      padding-left: 40px;
+      border: 3px solid transparent;
+      color: #CCCCCC;
+
+      &.now {
+        background-color: #1D1F21;
+        border-left: 3px solid #006699;
+        color: white;
+      }
+    }
+
+    .child a {
+      padding-left: 60px;
+    }
+  }
+
+}
+
+
+
+/*-------------------E 侧边栏 结束 ----------------------*/
+
+
+
+
+/*-------------------S 主体样式 开始 ----------------------*/
+
+.lt_main {
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-left: 180px;
+  transition: all 1s;
+  padding-top: 70px;
+
+  // 侧边栏切换
+  &.now {
+    padding-left: 0;
+
+    .lt_topbar {
+      padding-left: 0px;
+    }
+  }
+}
+
+// lt_topBar
+.lt_topbar {
+  height: 50px;
+  line-height: 50px;
+  background-color: #3C8CBB;
+  font-size: 18px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-left: 180px;
+  transition: all 1s;
+
+  a {
+    color: white;
+    padding: 0 20px;
+  }
+}
+/*-------------------E 主体样式 结束 ----------------------*/
+
+
+

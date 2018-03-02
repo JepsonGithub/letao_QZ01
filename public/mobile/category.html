@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>乐淘商城-分类页</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+
+<!-- 因为每个页面基本都是这么布局的, 上中下, 中间区域滚动, 所以样式在 common 中写 -->
+<div class="lt_container">
+  <div class="lt_header">
+    <!-- javascript: 伪协议, href 本来是要跳转, javascript: 表示页面不跳转, 变成执行 js 代码 -->
+    <a href="javascript:history.go(-1);" class="icon_left"><span class="mui-icon mui-icon-back"></span></a>
+    <h3>乐淘云购</h3>
+    <a href="search.html" class="icon_right"><span class="fa fa-search"></span></a>
+  </div>
+  
+  <!-- 由于左边和右边都要滚动, 所以分两块滚动, 需要两个滚动容器 -->
+  <div class="lt_main">
+    <div class="lt_category_left">
+      <div class="mui-scroll-wrapper">
+        <ul class="mui-scroll">
+          <!--<li class="now"><a href="javascript:;">运动馆</a></li>-->
+        </ul>
+      </div>
+    </div>
+    <div class="lt_category_right">
+      <div class="mui-scroll-wrapper">
+        <ul class="mui-scroll mui-clearfix item_list">
+          <!--<li class="item">-->
+            <!--<a href="javascript:;">-->
+              <!--<img src="images/brand1.png" alt="">-->
+              <!--<p>耐克</p>-->
+            <!--</a>-->
+          <!--</li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="lt_footer">
+    <ul>
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="category.html" class="now">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <span class="fa fa-user"></span>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  
+  </div>
+</div>
+
+<!-- 准备 leftTpl 模板 -->
+<script type="text/html" id="leftTpl">
+  {{ each rows v i }}
+    <li class="{{ i === 0 ? 'now' : '' }}" data-id="{{ v.id }}"><a href="javascript:;">{{ v.categoryName }}</a></li>
+  {{ /each }}
+</script>
+
+<!-- 右边的模板 rightTpl -->
+<script type="text/html" id="rightTpl">
+  {{ if rows.length === 0 }}
+    <p class="category_tips">该分类下没有更多的品牌信息</p>
+  {{ /if }}
+  
+  {{ each rows v i }}
+    <li class="item">
+      <a href="javascript:;">
+        <img src="{{ v.brandLogo }}" alt="">
+        <p>{{ v.brandName }}</p>
+      </a>
+    </li>
+  {{ /each }}
+</script>
+
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/common.js"></script>
+<!-- 引入自己的 js -->
+<script src="js/category.js"></script>
+
+</body>
+</html>

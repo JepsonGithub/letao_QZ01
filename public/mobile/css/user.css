@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.logout_wrapper {
+  padding: 20px;
+}
+.logout_wrapper .logout_btn {
+  padding: 10px 0;
+}

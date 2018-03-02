@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+.btn_edit {
+  background-color: #007AFF;
+}
+
+.btn_delete {
+  background-color: #DD524D;
+}
+
+// 图片盒子
+.img_box {
+  float: left;
+  img {
+    width: 60px;
+    height: 60px;
+    display: block;
+  }
+}
+
+// 文字盒子
+.info_box {
+  overflow: hidden;
+  padding: 0 10px;
+
+  .productName {
+    height: 42px;
+    color: #333;
+  }
+
+  .price {
+    color: red;
+  }
+
+  .oldPrice {
+    text-decoration: line-through;
+  }
+
+  .num {
+    float: right;
+  }
+}
+
+// 默认 table-cell 布局, 需要重置成 block
+.mui-table-cell {
+  display: block;
+}
+
+.lt_edit_size {
+  text-align: left;
+
+  .size {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    margin: 4px 0;
+    
+    &.now {
+      background-color: darkorange;
+      color: white;
+    }
+  }
+}
+
+.lt_edit_num {
+  text-align: left;
+}

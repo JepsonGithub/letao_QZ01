@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>乐淘商城-首页</title>
+  <!-- 加视口 -->
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+  <!-- 字体图标库 -->
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <!-- mui css -->
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  
+  <!-- 引入自己的 css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+
+<div class="lt_container">
+  <!-- 头部 -->
+  <div class="lt_header">
+    <a class="icon_left" href="javascript:history.go(-1);"><span class="mui-icon mui-icon-back"></span></a>
+    <h3 class="header_title">注册页面</h3>
+  </div>
+  
+  
+  <!-- 主体部分 -->
+  <div class="lt_main">
+  
+    <form id="form">
+      
+      <!-- 用户名 -->
+      <div class="mui-input-row">
+        <input type="text" class="mui-input-clear" name="username" placeholder="请输入用户名">
+      </div>
+      
+      <!-- 密码 -->
+      <div class="mui-input-row">
+        <input type="password" class="mui-input-password" name="password" placeholder="请输入密码">
+      </div>
+      
+      <!-- 校验密码 -->
+      <div class="mui-input-row">
+        <input type="password" class="mui-input-password" name="rePassword" placeholder="请输入校验密码">
+      </div>
+      
+      <!-- 手机号 -->
+      <div class="mui-input-row">
+        <input type="text" class="mui-input-clear" name="mobile" placeholder="请输入手机号">
+      </div>
+      
+      <!-- 验证码 -->
+      <div class="mui-input-row">
+        <input type="text"  class="vCode" name="vCode" placeholder="请输入验证码">
+        <button type="button" class="mui-btn mui-btn-primary getCode">获取验证码</button>
+      </div>
+      
+      <!-- 注册按钮 -->
+      <button type="button" class="mui-btn mui-btn-primary mui-btn-block registerBtn">注册</button>
+      
+      <!-- 同意用户信息 -->
+      <div class="tips">
+  
+        <label>
+          <input type="checkbox" id="checkbox">
+          <span>我同意《会员服务协议》</span>
+        </label>
+  
+        <a class="mui-pull-right" href="login.html"> 立即登录 </a>
+      
+      </div>
+      
+    </form>
+    
+    
+  
+  </div>
+  
+  
+  <!-- 底部部分 -->
+  <div class="lt_footer">
+    <ul>
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li  class="now">
+        <a href="user.html">
+          <span class="fa fa-user"></span>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- 模板引擎 -->
+<script src="lib/artTemplate/template-web.js"></script>
+<!-- mui 核心js 文件 -->
+<script src="lib/mui/js/mui.js"></script>
+<!-- zepto -->
+<script src="lib/zepto/zepto.min.js"></script>
+<!-- 自己的 js 文件 -->
+<script src="js/common.js"></script>
+
+<script src="js/register.js"></script>
+
+</body>
+</html>

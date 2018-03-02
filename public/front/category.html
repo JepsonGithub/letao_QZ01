@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>乐淘商城-分类页</title>
+  <!-- 加视口 -->
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+  <!-- 字体图标库 -->
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <!-- mui css -->
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  
+  <!-- 引入自己的 css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+
+
+<div class="lt_container">
+  <!-- 头部 -->
+  <div class="lt_header">
+    <a class="icon_left" href="javascript:history.go(-1);"><span class="mui-icon mui-icon-back"></span></a>
+    <h3 class="header_title">分类页</h3>
+    <a class="icon_right" href="search.html"><span class="fa fa-search"></span></a>
+  </div>
+  
+  
+  <!-- 主体部分 -->
+  <div class="lt_main">
+    
+    <!-- 整体布局 -->
+    <div class="lt_category_left">
+      <!-- 区域滚动 -->
+      <div class="mui-scroll-wrapper">
+        <ul class="mui-scroll">
+          <!--<li class="now"><a href="javascript:;">运动馆</a></li>-->
+        </ul>
+      </div>
+    </div>
+    <div class="lt_category_right">
+      <div class="mui-scroll-wrapper">
+        <ul class="mui-scroll mui-clearfix">
+          
+          <!--<li class="item">-->
+            <!--<a href="javascript:;">-->
+              <!--<img src="images/brand1.png" alt="">-->
+              <!--<p>耐克</p>-->
+            <!--</a>-->
+          <!--</li>-->
+         
+        </ul>
+      </div>
+    </div>
+  
+  </div>
+  
+  
+  <!-- 底部部分 -->
+  <div class="lt_footer">
+    <ul>
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li class="now">
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <span class="fa fa-user"></span>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- 左侧的模板 -->
+<script type="text/html" id="leftTpl">
+  {{ each rows v i }}
+  
+    <li data-id="{{ v.id }}" class="{{ i===0 ? 'now' : '' }}"><a href="javascript:;">{{ v.categoryName }}</a></li>
+  
+  {{ /each }}
+</script>
+
+<!-- 右侧的模板 -->
+<script type="text/html" id="rightTpl">
+  
+  {{ if rows.length === 0 }}
+    <p class="info">当前分类没有商品</p>
+  {{ /if }}
+  {{ each rows v i }}
+  
+    <li class="item">
+      <a href="javascript:;">
+        <img src="{{ v.brandLogo }}" alt="">
+        <p>{{ v.brandName }}</p>
+      </a>
+    </li>
+  
+  {{ /each }}
+</script>
+
+
+
+<!-- 模板引擎 -->
+<script src="lib/artTemplate/template-web.js"></script>
+<!-- mui 核心js 文件 -->
+<script src="lib/mui/js/mui.js"></script>
+<!-- zepto -->
+<script src="lib/zepto/zepto.min.js"></script>
+<!-- 自己的 js 文件 -->
+<script src="js/common.js"></script>
+<script src="js/category.js"></script>
+
+</body>
+</html>

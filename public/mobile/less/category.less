@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.lt_category_left {
+  width: 90px;
+  height: 100%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  background-color: #f3f4f5;
+
+  li {
+    a {
+      text-align: center;
+      display: block;
+      height: 50px;
+      width: 90px;
+      line-height: 50px;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      color: #666;
+    }
+    &:last-child a{
+      border-bottom: none;
+    }
+
+    // 选中状态, 因为将来是要进行排他的, 所以这里给 li 加更方便
+    &.now a {
+      background: #fff;
+      border-right: none;
+    }
+  }
+}
+
+
+// 整个云购 右侧
+.lt_category_right {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+  .item {
+    float: left;
+    width: 33%;
+    a {
+      width: 100%;
+      display: block;
+      padding: 10px;
+      text-align: center;
+
+      img {
+        width: 75px;
+        height: 50px;
+        margin: 0 auto;
+      }
+
+      p {
+        height: 25px;
+        line-height: 25px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .category_tips {
+    padding: 10px;
+  }
+}

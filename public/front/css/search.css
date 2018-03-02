@@ -1,0 +1,39 @@
+@charset "UTF-8";
+.lt_history .title {
+  height: 25px;
+  line-height: 25px;
+  font-size: 12px;
+  padding: 0 10px;
+  color: #999;
+}
+.lt_history .content {
+  font-size: 12px;
+  padding: 10px;
+}
+.lt_history .content ul {
+  border: 1px dashed #ccc;
+}
+.lt_history .content li {
+  border-bottom: 1px dashed #ccc;
+  height: 30px;
+  line-height: 30px;
+}
+.lt_history .content li a {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+.lt_history .content li .btn_delete {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+}
+.lt_history .content li:last-child {
+  border: none;
+}
+.lt_history .info {
+  color: #8f8f94;
+  font-size: 14px;
+  padding: 10px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>乐淘商城-登陆</title>
+  <link rel="icon" href="favicon.ico">
+  <!-- 添加视口 -->
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+<div class="lt_container">
+  <div class="lt_header">
+    <a class="icon_left" href="javascript:history.go(-1);"><span class="mui-icon mui-icon-back"></span></a>
+    <h3>注册</h3>
+  </div>
+  <div class="lt_main">
+    
+    <form class="myform">
+      <div class="mui-input-row">
+        <input type="text" name="username" class="mui-input-clear" placeholder="请输入用户名">
+      </div>
+      <div class="mui-input-row">
+        <input type="password" name="password" class="mui-input-password" placeholder="请输入密码">
+      </div>
+      <div class="mui-input-row">
+        <input type="password"  class="mui-input-password repassword" placeholder="请再次确认密码">
+      </div>
+      <div class="mui-input-row">
+        <input type="text" name="mobile" class="mui-input-clear" placeholder="请输入手机号">
+      </div>
+      <div class="mui-input-row">
+        <input type="text" name="vCode" class="vCode" placeholder="请输入验证码">
+        <button class="mui-btn mui-btn-primary getCodeBtn">获取验证码</button>
+      </div>
+      <div class="mui-input-row">
+        <button class="mui-btn mui-btn-block mui-btn-primary registerBtn">注 册</button>
+      </div>
+      <div class="mui-input-row tips">
+        <label class="mui-pull-left">
+          <input type="checkbox" id="checkbox">
+          我同意《会员服务协议》
+        </label>
+        <span class="mui-pull-right">
+          <a href="login.html">立即登录</a>
+        </span>
+      </div>
+    </form>
+  
+  </div>
+  <div class="lt_footer">
+    <ul>
+      <li >
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html" class="now">
+          <span class="fa fa-user"></span>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/mui/js/mui.js"></script>
+<script src="js/common.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>乐淘商城-后台管理-登陆页</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
+  <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+  <!-- 引入自己的 css -->
+  <!-- pc 端页面, 差异性较低, 我们只需要在 common.css 里面编写样式复用即可 -->
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<!-- 左边侧边栏 -->
+<div class="lt_aside">
+  <!-- 大标题 -->
+  <div class="brand">
+    <a href="index.html">全栈1期</a>
+  </div>
+  <!-- 用户信息 -->
+  <div class="user">
+    <img src="images/pp.png" alt="">
+    <p>超级管理员</p>
+  </div>
+  <!-- 导航 -->
+  <div class="nav">
+    <ul>
+      <li><a href="user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
+      <li>
+        <a class="classify" href="javascript:;"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
+        <ul class="child" style="display: none;">
+          <li><a href="first.html">一级分类</a></li>
+          <li><a href="second.html">二级分类</a></li>
+        </ul>
+      </li>
+      <li><a href="product.html"><span class="glyphicon glyphicon-tags"></span> 商品管理</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 右侧主体内容 -->
+<div class="lt_main">
+  
+  <!-- 顶部选项栏 -->
+  <div class="lt_topbar">
+    <a class="pull-left icon_menu" href="javascript:;"><span class="glyphicon glyphicon-align-justify"></span></a>
+    <a class="pull-right icon_logout" href="javascript:;"><span class="glyphicon glyphicon-log-out"></span></a>
+  </div>
+  
+  
+  <div class="container-fluid">
+    
+    <!-- 面包屑导航 -->
+    <ol class="breadcrumb">
+      <li><a href="index.html">管理系统</a></li>
+      <li class="active">首页</li>
+    </ol>
+    
+    <!-- 页面主体部分-->
+    <div class="lt_content">
+      <!-- 左右的图 -->
+      <div class="pic_left col-md-6"></div>
+      <div class="pic_right col-md-6"></div>
+    </div>
+  
+  </div>
+
+</div>
+
+
+<!-- role aria-... 是给盲人设备识别的  -->
+<div class="modal fade" id="logoutModal">
+  <!-- modal-lg 大型, 不写中等, modal-sm 小型模态框 -->
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <p><span class="glyphicon glyphicon-info-sign"></span> 你确定要退出管理系统么?</p>
+      </div>
+      <div class="modal-footer">
+        <!-- data-dismiss="modal" 可以设置点击时, 关闭模态框 -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/echarts/echarts.min.js"></script>
+<script src="js/common.js"></script>
+<!-- 我们自己的js -->
+<script src="js/index.js"></script>
+
+</body>
+</html>

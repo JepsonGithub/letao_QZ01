@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>乐淘商城-后台管理-登陆页</title>
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
+  <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+  <!-- 引入自己的 css -->
+  <!-- pc 端页面, 差异性较低, 我们只需要在 common.css 里面编写样式复用即可 -->
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+<!-- 左边侧边栏 -->
+<div class="lt_aside">
+  <!-- 大标题 -->
+  <div class="brand">
+    <a href="index.html">全栈1期</a>
+  </div>
+  <!-- 用户信息 -->
+  <div class="user">
+    <img src="images/pp.png" alt="">
+    <p>超级管理员</p>
+  </div>
+  <!-- 导航 -->
+  <div class="nav">
+    <ul>
+      <li><a href="user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
+      <li>
+        <a class="classify" href="javascript:;"><span class="glyphicon glyphicon-list"></span> 分类管理</a>
+        <ul class="child">
+          <li><a href="first.html">一级分类</a></li>
+          <li><a class="now" href="second.html">二级分类</a></li>
+        </ul>
+      </li>
+      <li><a href="product.html"><span class="glyphicon glyphicon-tags"></span> 商品管理</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 右侧主体内容 -->
+<div class="lt_main">
+  
+  <!-- 顶部选项栏 -->
+  <div class="lt_topbar">
+    <a class="pull-left icon_menu" href="javascript:;"><span class="glyphicon glyphicon-align-justify"></span></a>
+    <a class="pull-right icon_logout" href="javascript:;"><span class="glyphicon glyphicon-log-out"></span></a>
+  </div>
+  
+  
+  <div class="container-fluid">
+    
+    <!-- 面包屑导航 -->
+    <ol class="breadcrumb">
+      <li><a href="index.html">管理系统</a></li>
+      <li class="active">分类管理</li>
+      <li class="active">二级分类</li>
+    </ol>
+    
+    <!-- 内容主体部分 -->
+    <div class="lt_content">
+    
+      <button class="btn btn-default mb_20" id="addBtn">添加分类</button>
+      
+      <!-- 表格组件 -->
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>一级分类名称</th>
+            <th>二级分类名称</th>
+            <th>二级分类LOGO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--<tr>-->
+            <!--<td>1</td>-->
+            <!--<td>男士馆</td>-->
+            <!--<td>大长靴</td>-->
+            <!--<td><img src="images/none.png" height="50" alt=""></td>-->
+          <!--</tr>-->
+        </tbody>
+      </table>
+      
+      <!-- 分页组件 -->
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
+    
+    </div>
+  
+  </div>
+
+</div>
+
+<div class="modal fade" id="addSecondModal">
+  <!-- modal-lg 大型, 不写中等, modal-sm 小型模态框 -->
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">添加分类</h4>
+      </div>
+      <div class="modal-body">
+        <form id="form">
+          <!-- form-group 表示 表单中的每一行 -->
+          <!-- 下拉框组件 -->
+          <div class="form-group">
+            <div class="dropdown">
+              一级分类:
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                <span class="dropdown-text">请选择</span>
+                <!-- 按钮上面, 右边的小三角 -->
+                <span class="caret"></span>
+              </button>
+              
+              <!-- 利用隐藏域存储需要提交到后台的信息数据 -->
+              <input type="hidden" name="categoryId">
+              <ul class="dropdown-menu">
+                <!--<li><a href="#">哈哈馆</a></li>-->
+              </ul>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="请输入二级分类" name="brandName">
+          </div>
+          
+          <div class="form-group">
+            <input type="button" value="上传图片" class="btn btn-default" id="uploadBtn">
+            <!-- id 用于方便的查找这个控件 -->
+            <!-- name 上传到服务器时, 服务器要通过 name 来获取图片 -->
+            <!-- data-url 上传图片到服务器的接口地址 -->
+            <input type="file" id="uploadFile" name="pic1" data-url="/category/addSecondCategoryPic" style="display: none">
+          </div>
+          
+          <div class="form-group imgBox">
+            <img src="images/none.png" width="100" alt="">
+            <input type="hidden" name="brandLogo">
+          </div>
+        
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- data-dismiss="modal" 可以设置点击时, 关闭模态框 -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <!-- html5 新增一个属性, form 属性, 可以让表单外面的元素, 归属于表单内部 -->
+        <button type="submit" form="form" class="btn btn-primary" id="submitBtn">添加</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- role aria-... 是给盲人设备识别的  -->
+<div class="modal fade" id="logoutModal">
+  <!-- modal-lg 大型, 不写中等, modal-sm 小型模态框 -->
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <p><span class="glyphicon glyphicon-info-sign"></span> 你确定要退出管理系统么?</p>
+      </div>
+      <div class="modal-footer">
+        <!-- data-dismiss="modal" 可以设置点击时, 关闭模态框 -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/html" id="tableTpl">
+  {{ each rows v i }}
+    <tr>
+      <td>{{ (page-1) * size + (i+1) }}</td>
+      <td>{{ v.categoryName }}</td>
+      <td>{{ v.brandName }}</td>
+      <td><img src="{{ v.brandLogo }}" height="50" alt=""></td>
+    </tr>
+  {{ /each }}
+</script>
+
+
+<!-- 选择1级菜单下拉列表模板 -->
+<script type="text/html" id="dropdownTpl">
+  {{ each rows v i }}
+    <li><a href="#" data-id="{{ v.id }}">{{ v.categoryName }}</a></li>
+  {{ /each }}
+</script>
+
+
+
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<!-- 分页插件引包 -->
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<!-- jQuery 文件上传插件 -->
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
+
+
+<script src="js/common.js"></script>
+<!-- 我们自己的js -->
+<script src="js/second.js"></script>
+
+</body>
+</html>

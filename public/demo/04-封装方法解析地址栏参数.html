@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  // 我们需要一个方法, 可以将地址栏参数字符串, 解析成对象
+  // 可以方便我们获取地址栏参数
+  
+  var tools = {
+    // 将地址栏参数转换成对象
+    getSearchObj: function() {
+      // 1. 拿到地址栏参数字符串
+      var str = location.search.slice(1);  // name=pp&age=18
+    
+      // 2. 通过 & 进行分割
+      var arr = str.split("&");  // [ "name=pp", "age=18" ]
+    
+      var obj = {};
+      // 3. 遍历数组, 将 key 和 value 提取出来, 添加到对象中
+      arr.forEach(function( v, i ) {
+        var key = v.split( "=" )[ 0 ];
+        var value = v.split( "=" )[ 1 ];
+      
+        // 将 key value 添加到对象中
+        obj[ key ] = value;
+      });
+    
+      return obj;
+    },
+    // 直接通过 key 获取 value 值
+    // getSearch("name")
+    getSearch: function( key ) {
+      return tools.getSearchObj()[ key ];
+    }
+  }
+
+  console.log(tools.getSearch("name"));;
+  
+  
+  
+  
+  
+</script>
+
+
+</body>
+</html>

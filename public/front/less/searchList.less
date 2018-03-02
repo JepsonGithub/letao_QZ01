@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+// 乐淘排序
+.lt_sort {
+  height: 30px;
+  line-height: 30px;
+  display: flex;
+  padding: 0 10px;
+  background-color: #eee;
+
+  a {
+    flex: 1;
+    font-size: 12px;
+    text-align: center;
+    color: #666;
+
+    &.now {
+      color: darkorange;
+    }
+  }
+}
+
+.loading {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #069;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 200px;
+  animation: zhuan 1s infinite;
+}
+
+// 定义转转的动画
+@keyframes zhuan {
+  from {
+    transform: translateX(-50%) rotate(0deg)
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg)
+  }
+}
+

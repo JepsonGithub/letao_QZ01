@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+// 乐淘历史记录
+.lt_history {
+
+  // 标题
+  .title {
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+    padding: 0 10px;
+    color: #999;
+  }
+
+  // 内容
+  .content {
+    font-size: 12px;
+    padding: 10px;
+
+    ul {
+      border: 1px dashed #ccc;
+    }
+
+
+    li {
+      border-bottom: 1px dashed #ccc;
+      height: 30px;
+      line-height: 30px;
+
+      a {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+      }
+
+      .btn_delete {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  // 提示信息
+  .info {
+    color: #8f8f94;
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+

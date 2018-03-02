@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  var arr = [0,1,2,3,4,5,6,7];
+  
+  // 删除 4 这项
+  // slice(start, end) 从数组中截取一部分出来
+  //       start 是从哪个索引开始, end 到哪结束(不包括end)
+  
+  //  var start = arr.slice(0, 4);
+  //  var end = arr.slice(5,8);
+  //  var newArr = start.concat( end );
+  //  console.log( newArr )
+  
+  
+  
+  // splice(index, howmany, item1, item2)
+  // splice 用于替换数组中的项
+  // index 从哪开始
+  // howmany 多少个
+  // item1, item2, item3... 替换的项
+  
+  var arr = [0,1,2,3];
+  arr.splice(1, 1, 8, 9)
+  console.log( arr );
+  
+  // 特点: 注意 splice 会改变原来的数组
+  //       slice 不会改变原来的数组, 而且会返回一个新的数组
+  
+  // 最常用方法: splice 删除数组中的某一项
+  //            arr.splice( index, 1 );
+  
+</script>
+
+</body>
+</html>

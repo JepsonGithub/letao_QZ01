@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div>
+  <!--<p>姓名: 小王</p>-->
+  <!--<p>年龄: 18 </p>-->
+  <!--<p>性别: 男 </p>-->
+  <!--<p>描述: 年轻气力盛</p>-->
+  <!--<p>爱好: 专通下水道</p>-->
+</div>
+
+<!-- 使用模板引擎 -->
+<!-- 1. 引包 -->
+<!-- 2. 准备模板 -->
+<!-- 3. 准备数据 -->
+<!-- 4. 将模板和数据相结合渲染到页面中 -->
+
+<!-- 最新版的 artTemplate 两种语法都支持, 可以混用 -->
+<script src="template-web.js"></script>
+
+<!-- 必须要设置 type="text/html",  指定id便于找到-->
+<script type="text/html" id="tpl">
+  <!-- 标准语法输出 -->
+  <p>姓名: {{ name }}</p>
+  <!-- 原生语法输出 -->
+  <p>年龄: <%= age %> </p>
+  
+  <p>性别: {{ sex === 1 ? "男" : "女" }} </p>
+  
+  <!-- 标准语法, 如果希望标签被渲染, 需要 @ -->
+  <p>描述: {{@ desc }}</p>
+  
+  <!-- 原生语法, 如果希望标签被渲染, 需要 - -->
+  <p>描述: <%- desc %></p>
+  
+  
+  
+  <p>爱好: {{ hobby }}</p>
+</script>
+
+<script>
+  var obj = {
+    name: "小红",
+    age: 80,
+    sex: 0,
+    desc: "<h2>美女</h2>",
+    hobby: "美男子"
+  };
+  
+  // 通过 template 方法, 将模板和数据相结合
+  // 参数1: 模板 id
+  // 参数2: 数据对象 (必须是一个对象)
+  //        在模板中可以任意使用对象中的属性
+  var htmlStr = template( "tpl", obj );
+  
+  document.querySelector("div").innerHTML = htmlStr ;
+ 
+</script>
+
+</body>
+</html>

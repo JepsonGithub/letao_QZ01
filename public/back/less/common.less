@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+
+/*-------------------S 基本样式重置 开始 ----------------------*/
+html, body {
+  width: 100%;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+// lvha  lv 哈哈
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+
+/*-------------------E 基本样式重置 结束 ----------------------*/
+
+// 添加大背景
+.body_bg {
+  background-color: #212C32;
+}
+
+.mt_150 {
+  margin-top: 150px;
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+.panel .panel-title {
+  text-align: center;
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+
+
+// 左侧侧边栏
+.lt_aside {
+  width: 180px;
+  height: 100%;
+  background-color: #222D32;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 1s;
+
+  // 侧边栏切换状态
+  &.now {
+    left: -180px;
+  }
+
+  // 大标题
+  .brand {
+    width: 180px;
+    height: 50px;
+    background-color: #367EA8;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 50px;
+      font-size: 24px;
+      color: white;
+      text-align: center;
+    }
+  }
+
+  // 用户头像
+  .user {
+    padding: 20px;
+
+    img {
+      width: 80px;
+      height: 80px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+
+    p {
+      text-align: center;
+      font-size: 16px;
+      color: white;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+
+  }
+
+  // 导航
+  .nav {
+
+    a {
+      width: 180px;
+      height: 40px;
+      display: block;
+      line-height: 34px;
+      color: #ccc;
+      padding-left: 40px;
+      border: 3px solid transparent;
+
+      &.now {
+        background-color: #1D1F21;
+        color: white;
+        border-left: 3px solid #006699;
+      }
+    }
+
+    // 导航二级的列表需要 padding 加多一点
+    .child a {
+      padding-left: 60px;
+    }
+  }
+}
+
+
+
+// 右侧主体部分
+.lt_main {
+  width: 100%;
+  height: 100%;
+  padding-left: 180px;
+  transition: all 1s;
+
+  // 侧边栏切换显示的状态
+  &.now {
+    padding-left: 0px;
+  }
+
+  .lt_topbar {
+    height: 50px;
+    background-color: #3C8CBB;
+
+    a {
+      display: block;
+      color: white;
+      font-size: 20px;
+      height: 50px;
+      line-height: 50px;
+      padding: 0 15px;
+    }
+  }
+
+
+  // 面包屑导航
+  .breadcrumb {
+    margin-top: 20px;
+  }
+
+
+  // echarts 左右部分
+  .pic_left, .pic_right {
+    height: 400px;
+  }
+}
+
+
+#logoutModal .modal-body {
+  color: #A94442;
+}
+
+
+// 希望让所有的表格, 都能够水平垂直居中
+// text-align: center;
+// vertical-align: middle;
+
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
+}

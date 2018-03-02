@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>乐淘商城-分类页</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/searchList.css">
+</head>
+<body>
+
+<div class="lt_container">
+  <div class="lt_header">
+    <a href="javascript:history.go(-1);" class="icon_left"><span class="mui-icon mui-icon-back"></span></a>
+    <h3>搜索中心</h3>
+  </div>
+  
+  <div class="lt_main">
+    <!-- 滚动容器的父盒子 -->
+    <div class="mui-scroll-wrapper">
+      <!-- 子盒子 -->
+      <div class="mui-scroll">
+        
+        <!-- 乐淘搜索 -->
+        <div class="lt_search">
+          <input type="text" class="search_inp" placeholder="请输入搜索关键字">
+          <button class="mui-btn mui-btn-primary search_btn">搜索</button>
+        </div>
+        
+        
+        <!-- 乐淘排序 -->
+        <div class="lt_sort">
+          <a href="javascript:;">上架时间 <span class="fa fa-angle-down"></span></a>
+          <a href="javascript:;" data-type="price">价格 <span class="fa fa-angle-down"></span></a>
+          <a href="javascript:;" data-type="num">库存 <span class="fa fa-angle-down"></span></a>
+          <a href="javascript:;">折扣 <span class="fa fa-angle-down"></span></a>
+        </div>
+        
+        <!-- 乐淘商品 -->
+        <div class="lt_product">
+          
+          <!--<a href="javascript:;" class="item_box">-->
+            <!--<div class="item">-->
+              <!--<img src="images/product.jpg" alt="">-->
+              <!--<p class="mui-text-left mui-ellipsis-2">adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>-->
+              <!--<p><span class="price">¥560</span> <span class="oldPrice">¥580</span></p>-->
+              <!--<button class="mui-btn mui-btn-primary">立即购买</button>-->
+            <!--</div>-->
+          <!--</a>-->
+  
+        </div>
+      
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="lt_footer">
+    <ul>
+      <li>
+        <a href="index.html">
+          <span class="fa fa-home"></span>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="category.html">
+          <span class="fa fa-bars"></span>
+          <p>分类</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <span class="fa fa-user"></span>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  
+  </div>
+</div>
+
+
+<script type="text/html" id="productTpl">
+  {{ each data v i }}
+    <a href="product.html?productId={{ v.id }}" class="item_box">
+      <div class="item">
+        <img src="{{ v.pic[0] ? v.pic[0].picAddr : 'images/none.png' }}" alt="">
+        <p class="mui-text-left mui-ellipsis-2">{{ v.proName }} </p>
+        <p><span class="price">¥{{ v.price }}</span> <span class="oldPrice">¥{{ v.oldPrice }}</span></p>
+        <button class="mui-btn mui-btn-primary">立即购买</button>
+      </div>
+    </a>
+  {{ /each }}
+</script>
+
+
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/common.js"></script>
+<!-- 引入自己的 js -->
+<script src="js/searchList.js"></script>
+
+</body>
+</html>

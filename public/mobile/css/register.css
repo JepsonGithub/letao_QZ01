@@ -1,0 +1,24 @@
+.lt_main {
+  padding: 10px;
+}
+.lt_main .vCode {
+  width: 60%;
+}
+.lt_main .getCodeBtn {
+  width: 35%;
+}
+.lt_main .getCodeBtn.disabled {
+  background: #666;
+  border: 1px solid #666;
+}
+.lt_main .registerBtn {
+  width: 100%;
+}
+.lt_main .tips {
+  padding-top: 5px;
+  font-size: 16px;
+}
+.lt_main .mui-input-row label {
+  width: auto;
+  padding: 0;
+}
